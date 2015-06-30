@@ -1,0 +1,43 @@
+{
+  "name": "error-wrapper",
+  "version": "1.0.0",
+  "description": "A base class for errors that wrap other errors.",
+  "main": "umd.js",
+  "devDependencies": {
+    "babel": "^5.6.5",
+    "babelify": "^6.1.2",
+    "chai": "^3.0.0",
+    "codeclimate-test-reporter": "0.0.4",
+    "error-subclass": "^1.0.2",
+    "eslint": "^0.24.0",
+    "istanbul": "^0.3.16",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
+    "semistandard": "^6.1.1"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "scripts": {
+    "test": "istanbul cover node_modules/.bin/_mocha -- -u exports --compilers js:babel/register",
+    "build-umd": "browserify src/ErrorWrapper.js > umd.js --standalone ErrorWrapper",
+    "build-es6": "cp src/ErrorWrapper.js es6.js",
+    "build": "npm run build-umd && npm run build-es6",
+    "lint": "jshint src && semistandard",
+    "prepublish": "npm run build"
+  },
+  "jshintConfig": {
+    "esnext": true
+  },
+  "author": "Stephen Sorensen <shuoink@gmail.com> (http://www.stephenjohnsorensen.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "error-subclass": "^1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spudly/error-wrapper.git"
+  }
+}
