@@ -8,7 +8,7 @@
     "babelify": "^6.1.2",
     "chai": "^3.0.0",
     "codeclimate-test-reporter": "0.0.4",
-    "error-subclass": "^1.0.2",
+    "error-subclass": "^2.0.0",
     "eslint": "^0.24.0",
     "istanbul": "^0.3.16",
     "jshint": "^2.8.0",
