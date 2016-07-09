@@ -4,3 +4,4 @@ npm-debug.*
 umd.js
 es6.js
 coverage
+.nyc_output
