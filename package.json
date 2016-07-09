@@ -1,6 +1,6 @@
 {
   "name": "error-wrapper",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A base class for errors that wrap other errors.",
   "main": "umd.js",
   "devDependencies": {
