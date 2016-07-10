@@ -1,6 +1,5 @@
 {
   "name": "error-wrapper",
-  "version": "2.0.1",
   "description": "A base class for errors that wrap other errors.",
   "main": "umd.js",
   "devDependencies": {
@@ -13,7 +12,8 @@
     "jshint": "^2.8.0",
     "mocha": "^2.2.5",
     "nyc": "^7.0.0",
-    "semistandard": "^8.0.0"
+    "semistandard": "^8.0.0",
+    "semantic-release": "^4.3.5"
   },
   "babel": {
     "presets": [
@@ -24,7 +24,8 @@
     "test": "nyc --require babel-register mocha -u exports",
     "build": "browserify -t [ babelify --presets [ es2015 ] ] src/ErrorWrapper.js --standalone ErrorWrapper > umd.js",
     "lint": "jshint src && semistandard",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "jshintConfig": {
     "esnext": true
