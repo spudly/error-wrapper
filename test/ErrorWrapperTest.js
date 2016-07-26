@@ -1,6 +1,6 @@
 import ErrorWrapper from '../src/ErrorWrapper';
-import { assert } from 'chai';
-const { strictEqual, equal, doesNotThrow, include: includes, isString } = assert;
+import {assert} from 'chai';
+const {strictEqual, equal, doesNotThrow, include: includes, isString} = assert;
 
 const WRAPPER_MESSAGE = '__MESSAGE__';
 const WRAPPED_MESSAGE = '__WRAPPED_MESSAGE__';
