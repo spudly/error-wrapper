@@ -19,7 +19,7 @@
     ]
   },
   "scripts": {
-    "test": "nyc --require babel-register mocha -u exports",
+    "test": "npm run lint && nyc --require babel-register mocha -u exports",
     "build": "browserify -t [ babelify --presets [ es2015 ] ] src/ErrorWrapper.js --standalone ErrorWrapper > umd.js",
     "lint": "eslint src test",
     "prepublish": "npm run build",
