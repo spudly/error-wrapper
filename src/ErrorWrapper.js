@@ -1,3 +1,5 @@
+/* eslint-disable prefer-reflect */ // for browser compatibility
+
 import ErrorSubclass from 'error-subclass';
 
 class ErrorWrapper extends ErrorSubclass {
