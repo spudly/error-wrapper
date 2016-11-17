@@ -27,7 +27,7 @@
     "chai": "^3.0.0",
     "mocha": "^3.0.0",
     "nyc": "^8.1.0",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "^6.3.2"
   },
   "files": [
     "umd.js"
