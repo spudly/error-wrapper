@@ -5,28 +5,30 @@
   "license": "MIT",
   "main": "umd.js",
   "scripts": {
-    "test": "npm run lint && nyc --require babel-register mocha -u exports",
+    "test": "jest",
     "build": "browserify -t [ babelify --presets [ es2015 ] ] src/ErrorWrapper.js --standalone ErrorWrapper > umd.js",
-    "lint": "lint src test",
+    "lint": "eslint src",
     "prepublish": "npm run build",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/spudly/error-wrapper.git"
   },
   "dependencies": {
-    "error-subclass": "^2.0.0"
+    "error-subclass": "^2.2.0"
   },
   "devDependencies": {
-    "@spudly/eslint-config": "^3.0.0",
+    "@spudly/eslint-config": "^5.0.1",
     "babel-preset-es2015": "^6.9.0",
-    "babel-register": "^6.9.0",
     "babelify": "^7.3.0",
-    "browserify": "^13.0.1",
-    "chai": "^3.0.0",
-    "mocha": "^3.0.0",
-    "nyc": "^10.0.0",
+    "browserify": "^14.1.0",
+    "eslint": "^3.18.0",
+    "husky": "^0.13.2",
+    "jest": "^19.0.2",
+    "lint-staged": "^3.4.0",
+    "prettier": "^0.22.0",
     "semantic-release": "^6.3.2"
   },
   "files": [
@@ -39,5 +41,12 @@
   },
   "eslintConfig": {
     "extends": "@spudly"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write --print-width=100 --single-quote --bracket-spacing=false 'src/**/*.js'",
+      "git add"
+    ]
   }
 }

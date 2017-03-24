@@ -3,18 +3,17 @@
 import ErrorSubclass from 'error-subclass';
 
 class ErrorWrapper extends ErrorSubclass {
-
   constructor(message, childError) {
     super(message);
     this.childError = childError;
-    const stack = this.stack;
+
+    const stackDescriptor = Object.getOwnPropertyDescriptor(this, 'stack');
+    const getStack = stackDescriptor.get || (() => stackDescriptor.value);
+
     Object.defineProperty(this, 'stack', {
-      get() {
-        return `${stack}\nCaused by: ${this.childError.stack}`;
-      },
+      get: () => `${getStack.call(this)}\nCaused by: ${this.childError.stack}`
     });
   }
-
 }
 
 export default ErrorWrapper;
