@@ -29,7 +29,7 @@
     "jest": "^21.0.0",
     "lint-staged": "^4.0.0",
     "prettier": "^1.0.0",
-    "semantic-release": "^7.0.1"
+    "semantic-release": "^16.0.1"
   },
   "files": [
     "umd.js"
